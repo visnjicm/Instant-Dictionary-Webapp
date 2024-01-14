@@ -1,16 +1,18 @@
 import justpy as jp
-
+import webapp.navbar as navbar
 
 class About:
     path = "/about"
 
     def serve(self):
         wp = jp.QuasarPage(tailwind=True)
-        div = jp.Div(a=wp, classes="bg-gray-200 "
-                                   "h-screen")
-        jp.Div(a=div, text="This is the about page!",
-               classes="text-4xl m-2")
-        jp.Div(a=div, text=("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum sapien sem, "
+
+        page = navbar.Navbar(wp)
+        page_container = page.return_page_container()
+
+        # div = jp.Div(a=page_container, classes="bg-gray-200 ""h-screen")
+        jp.Div(a=page_container, text="This is the about page!", classes="text-4xl m-2")
+        jp.Div(a=page_container, text=("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum sapien sem, "
                             "et semper dolor commodo porta. Sed ante tortor, consequat vitae tempor quis, interdum id "
                             "elit. Cras accumsan justo at dui iaculis, eget placerat massa aliquet. Pellentesque et "
                             "semper nulla, sodales lacinia ante. Aliquam efficitur nulla at porta lobortis. Nunc nunc "
