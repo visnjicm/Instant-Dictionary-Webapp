@@ -1,9 +1,10 @@
 import justpy as jp
 import definition
 import webapp.navbar as navbar
+from webapp import page
 
 
-class Dictionary:
+class Dictionary(page.Page):
     path = "/dictionary"
 
     @classmethod

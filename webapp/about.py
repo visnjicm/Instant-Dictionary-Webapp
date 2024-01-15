@@ -1,7 +1,9 @@
 import justpy as jp
 import webapp.navbar as navbar
+from webapp import page
 
-class About:
+
+class About(page.Page):
     path = "/about"
 
     def serve(self):
